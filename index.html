@@ -153,17 +153,18 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
 
 .btn{
   height:44px;
+  padding:0 18px;
   background:transparent;
-  border:none;
-  font-size:15px;
-  border-bottom:1px solid var(--line);
+  border:1px solid rgba(234,234,234,.25);
+  font-size:14px;
+  letter-spacing:.1em;
   cursor:pointer;
-  opacity:.9;
-  transition:opacity .3s ease;
+  transition:all .3s ease;
 }
 
-.btn:hover{opacity:.7}
-
+.btn:hover{
+  border-color:rgba(234,234,234,.6);
+}
 /* FOOTER */
 footer{
   padding:clamp(100px, 18vh, 220px) 0 60px;
