@@ -14,6 +14,7 @@
   --muted:rgba(234,234,234,.75);
   --faint:rgba(234,234,234,.55);
   --line:rgba(234,234,234,.16);
+  --accent:#D1BFBB;
   --max:1100px;
   --pad:clamp(20px, 6vw, 90px);
 }
@@ -41,7 +42,7 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
 }
 
 .section{
-  padding:clamp(80px, 16vh, 180px) 0;
+  padding:clamp(110px, 20vh, 240px) 0;
   border-top:1px solid var(--line);
 }
 
@@ -65,29 +66,47 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
   text-transform:uppercase;
   font-size:clamp(44px, 7vw, 100px);
   line-height:1.05;
+
+  opacity:0;
+  animation:fadeIn 1.2s ease forwards;
 }
 
 .subtitle{
-  margin: 56px 0 0;
+  margin:56px 0 0;
   font-size:clamp(16px, 1.4vw, 19px);
   color:var(--muted);
+
+  opacity:0;
+  animation:fadeIn 1.2s ease forwards;
+  animation-delay:.2s;
 }
 
 .cta{
   display:inline-block;
   margin-top:96px;
-  font-size:clamp(16px, 1.4vw, 19px);
-  border-bottom:1px solid var(--line);
-  padding-bottom:6px;
-  opacity:.9;
-  transition:opacity .3s ease;
+  font-size:clamp(15px, 1.3vw, 18px);
+  border:1px solid var(--line);
+  padding:14px 36px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition: background .35s ease, 
+              border-color .35s ease, 
+              color .25s ease;
+
+  opacity:0;
+  animation:fadeIn 1.2s ease forwards;
+  animation-delay:.4s;
 }
 
-.cta:hover{opacity:.7}
+.cta:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#000;
+}
 
 /* ART */
 .art{
-  padding-top:clamp(120px, 20vh, 220px);
+  padding-top:clamp(160px, 25vh, 300px);
 }
 
 .art-img{
@@ -96,9 +115,9 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
 }
 
 .art-meta{
-  margin-top:24px;
+  margin-top:28px;
   font-size:12px;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   text-transform:uppercase;
 }
 
@@ -131,17 +150,17 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
 }
 
 .form{
-  margin-top:64px;
+  margin-top:72px;
   max-width:720px;
   display:flex;
   align-items:center;
-  gap:28px;
+  gap:32px;
 }
 
 .email{
   flex:1;
-  height:52px;
-  padding:0 18px;
+  height:56px;
+  padding:0 20px;
   background:transparent;
   border:1px solid rgba(234,234,234,.25);
   color:var(--fg);
@@ -155,8 +174,8 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
 }
 
 .btn{
-  height:52px;
-  padding:0 32px;
+  height:56px;
+  padding:0 40px;
   background:transparent;
   border:1px solid rgba(234,234,234,.25);
   color:var(--fg);
@@ -165,19 +184,19 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
   text-transform:uppercase;
   cursor:pointer;
   transition: background .35s ease, 
-            border-color .35s ease, 
-            color .25s ease;
+              border-color .35s ease, 
+              color .25s ease;
 }
 
 .btn:hover{
-  background:#D1BFBB;
-  border-color:#D1BFBB;
+  background:var(--accent);
+  border-color:var(--accent);
   color:#000;
-
 }
+
 /* FOOTER */
 footer{
-  padding:clamp(100px, 18vh, 220px) 0 60px;
+  padding:clamp(140px, 25vh, 300px) 0 80px;
 }
 
 .foot{
@@ -197,7 +216,7 @@ footer{
   border-color:var(--line);
 }
 
-/* FADE */
+/* FADE SCROLL */
 .fade{
   opacity:0;
   transition:opacity 1.4s ease;
@@ -206,7 +225,12 @@ footer{
 .fade.visible{
   opacity:1;
 }
-  
+
+/* LOAD FADE */
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
 </style>
 </head>
 
