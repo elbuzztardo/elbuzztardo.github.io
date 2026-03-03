@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>El Buzztardo</title>
   <meta name="description" content="El Buzztardo — Independent symbolic practice." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#0b0b0b;
@@ -32,7 +33,8 @@
     a:focus{outline:2px solid rgba(234,234,234,.35); outline-offset:4px}
 
     .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
-    .section{padding:clamp(56px, 10vh, 120px) 0}
+    .section{padding:clamp(56px, 10vh, 120px) 0;            
+      border-top:1px solid rgba(255,255,255,0.04);}
 
     /* HERO */
     .hero{
@@ -43,12 +45,17 @@
     }
     .hero-inner{
       text-align:center;
-      transform:translateY(-1vh);
+      transform:translateY(-4vh);
     }
     .title{
+      
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  letter-spacing: .12em;
+
       margin:0;
-      font-weight:500;
-      letter-spacing:.06em;
+      
+      
       text-transform:uppercase;
       font-size:clamp(44px, 7.6vw, 104px);
       line-height:1.05;
@@ -68,11 +75,11 @@
       opacity:.95;
       transition:opacity .2s ease, border-color .2s ease;
     }
-    .cta:hover{opacity:1; border-color:rgba(234,234,234,.5)}
+    .cta:hover{opacity:.85; border-color:rgba(234,234,234,.5)}
 
     /* ART */
     .art{
-      padding-top:clamp(40px, 8vh, 80px);
+      padding-top:clamp(80px, 14vh, 160px);
     }
     .art-frame{
       margin:0 auto;
@@ -106,7 +113,7 @@
       margin:0;
       font-weight:500;
       letter-spacing:.02em;
-      font-size:clamp(34px, 4.2vw, 54px);
+      font-size:clamp(30px, 3.8vw, 48px);
       line-height:1.08;
     }
     .archive p{
@@ -163,6 +170,14 @@
       transition:border-color .2s ease, color .2s ease;
     }
     .foot a:hover{border-color:var(--line); color:var(--muted)}
+    .fade {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+}
   </style>
 </head>
 
@@ -178,7 +193,7 @@
   </section>
 
   <!-- ART (replace image src) -->
-  <section class="section art">
+  <section class="section art fade">
     <div class="wrap">
       <figure class="art-frame">
         <!-- Replace "art.jpg" with your exported image filename -->
@@ -189,7 +204,7 @@
   </section>
 
   <!-- ARCHIVE -->
-  <section class="section archive" id="archive">
+  <section class="section archive fade" id="archive">
     <div class="wrap">
       <h2>The Archive</h2>
       <p>Direct access.<br>
@@ -215,6 +230,20 @@ No feed. No algorithm.</p>
       </div>
     </div>
   </footer>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
 
+  document.querySelectorAll('.fade').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
