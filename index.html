@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Buzztardo</title>
+  <meta name="description" content="El Buzztardo — symbolic works. Independent practice." />
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --fg:#eaeaea;
+      --muted:rgba(234,234,234,.72);
+      --faint:rgba(234,234,234,.55);
+      --line:rgba(234,234,234,.28);
+      --max:1100px;
+      --pad:clamp(18px, 5vw, 72px);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.35;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:focus{outline:2px solid rgba(234,234,234,.35); outline-offset:4px}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
+    .section{padding:clamp(56px, 10vh, 120px) 0}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:0 var(--pad);
+    }
+    .hero-inner{
+      text-align:center;
+      transform:translateY(-1vh);
+    }
+    .title{
+      margin:0;
+      font-weight:500;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-size:clamp(44px, 7.6vw, 104px);
+      line-height:1.05;
+    }
+    .subtitle{
+      margin:28px 0 0;
+      font-size:clamp(16px, 1.6vw, 20px);
+      color:var(--muted);
+    }
+    .cta{
+      display:inline-block;
+      margin-top:56px;
+      font-size:clamp(16px, 1.6vw, 20px);
+      color:var(--fg);
+      border-bottom:1px solid var(--line);
+      padding-bottom:6px;
+      opacity:.95;
+      transition:opacity .2s ease, border-color .2s ease;
+    }
+    .cta:hover{opacity:1; border-color:rgba(234,234,234,.5)}
+
+    /* ART */
+    .art{
+      padding-top:clamp(40px, 8vh, 80px);
+    }
+    .art-frame{
+      margin:0 auto;
+      max-width:100%;
+      width:100%;
+    }
+    .art-img{
+      width:100%;
+      display:block;
+      border:none;
+      border-radius:0;
+      background:#111;
+      /* keep it gallery-like: no drop shadow */
+    }
+    .art-meta{
+      margin-top:18px;
+      font-size:13px;
+      color:var(--faint);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    /* ARCHIVE */
+    .archive h2{
+      margin:0;
+      font-weight:500;
+      letter-spacing:.02em;
+      font-size:clamp(34px, 4.2vw, 54px);
+      line-height:1.08;
+    }
+    .archive p{
+      margin:22px 0 0;
+      max-width:620px;
+      font-size:clamp(16px, 1.6vw, 18px);
+      color:var(--muted);
+    }
+    .form{
+      margin-top:44px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:center;
+    }
+    .email{
+      width:min(520px, 100%);
+      height:46px;
+      padding:0 14px;
+      background:transparent;
+      border:1px solid var(--line);
+      color:var(--fg);
+      font-size:16px;
+      border-radius:0;
+    }
+    .email::placeholder{color:rgba(234,234,234,.45)}
+    .btn{
+      height:46px;
+      padding:0 2px;
+      background:transparent;
+      border:none;
+      color:var(--fg);
+      font-size:16px;
+      border-bottom:1px solid var(--line);
+      cursor:pointer;
+      transition:opacity .2s ease, border-color .2s ease;
+    }
+    .btn:hover{opacity:1; border-color:rgba(234,234,234,.5)}
+
+    /* FOOTER */
+    footer{
+      padding:clamp(60px, 12vh, 140px) 0 48px;
+    }
+    .foot{
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      font-size:14px;
+      color:var(--faint);
+    }
+    .foot a{
+      border-bottom:1px solid transparent;
+      padding-bottom:4px;
+      transition:border-color .2s ease, color .2s ease;
+    }
+    .foot a:hover{border-color:var(--line); color:var(--muted)}
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <h1 class="title">El Buzztardo</h1>
+      <p class="subtitle">Symbolic works. Independent practice.</p>
+      <a class="cta" href="#archive">Join the Archive</a>
+    </div>
+  </section>
+
+  <!-- ART (replace image src) -->
+  <section class="section art">
+    <div class="wrap">
+      <figure class="art-frame">
+        <!-- Replace "art.jpg" with your exported image filename -->
+        <img class="art-img" src="art.jpg" alt="Artwork by El Buzztardo" />
+        <figcaption class="art-meta">2026</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section class="section archive" id="archive">
+    <div class="wrap">
+      <h2>The Archive</h2>
+      <p>Early access to new works and limited prints. No algorithm.</p>
+
+      <!-- Minimal fake form: replace with your provider embed -->
+      <form class="form" action="#" method="post" onsubmit="return false;">
+        <input class="email" type="email" name="email" placeholder="Enter your email" autocomplete="email" />
+        <button class="btn" type="submit">Join</button>
+      </form>
+
+      <!-- Tip: Replace the form above with Substack/MailerLite/ConvertKit embed code -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:hello@elbuzztardo.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
