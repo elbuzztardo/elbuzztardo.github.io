@@ -152,14 +152,17 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
 }
 
 .btn{
-  height:44px;
-  padding:0 18px;
+  margin-top:24px;
   background:transparent;
-  border:1px solid rgba(234,234,234,.25);
+  border:none;
   font-size:14px;
-  letter-spacing:.1em;
+  letter-spacing:.12em;
+  border-bottom:1px solid rgba(234,234,234,.35);
+  padding-bottom:6px;
   cursor:pointer;
-  transition:all .3s ease;
+  opacity:.9;
+  color: var(--fg);   /* OVO JE KLJUČNO */
+  transition:opacity .3s ease;
 }
 
 .btn:hover{
