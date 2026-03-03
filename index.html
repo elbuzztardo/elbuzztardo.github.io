@@ -66,7 +66,6 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
   text-transform:uppercase;
   font-size:clamp(44px, 7vw, 100px);
   line-height:1.05;
-
   opacity:0;
   animation:fadeIn 1.2s ease forwards;
 }
@@ -75,7 +74,6 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
   margin:56px 0 0;
   font-size:clamp(16px, 1.4vw, 19px);
   color:var(--muted);
-
   opacity:0;
   animation:fadeIn 1.2s ease forwards;
   animation-delay:.2s;
@@ -92,7 +90,6 @@ a:focus{outline:2px solid rgba(234,234,234,.35);outline-offset:4px}
   transition: background .35s ease, 
               border-color .35s ease, 
               color .25s ease;
-
   opacity:0;
   animation:fadeIn 1.2s ease forwards;
   animation-delay:.4s;
@@ -231,6 +228,35 @@ footer{
   to{opacity:1;}
 }
 
+/* ===================== */
+/* MOBILE RESPONSIVE FIX */
+/* ===================== */
+
+@media (max-width: 768px){
+
+  .hero-inner{
+    transform:none;
+  }
+
+  .cta{
+    margin-top:60px;
+  }
+
+  .form{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  footer{
+    padding:120px 0 60px;
+  }
+
+}
+  
 </style>
 </head>
 
